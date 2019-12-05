@@ -29,7 +29,11 @@ public class InventoryDAO {
 		return items;
 	}
 
-	public void addItem(Item item) {
+	public Item addItem(Item item) {
+		if(item.getId()==0)
+			item.setId(items.size()+1);
 		items.add(item);
+		
+		return item;
 	}
 }

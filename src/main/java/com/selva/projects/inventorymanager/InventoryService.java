@@ -13,7 +13,10 @@ public class InventoryService {
 
 	public Item findOne(int itemid) {
 
-		return inventoryDao.findOne(itemid);
+		Item item = inventoryDao.findOne(itemid);
+		if (item == null)
+			throw new ItemNotFoundException("Item with id " + itemid + " Not found");
+		return item;
 
 	}
 
@@ -22,16 +25,8 @@ public class InventoryService {
 		return inventoryDao.findAll();
 	}
 
-	public void addItem(Item item) {
-		inventoryDao.addItem(item);
-	}
-
-	public InventoryDAO getInventoryDao() {
-		return inventoryDao;
-	}
-
-	public void setInventoryDao(InventoryDAO inventoryDao) {
-		this.inventoryDao = inventoryDao;
+	public Item addItem(Item item) {
+		return inventoryDao.addItem(item);
 	}
 
 }
