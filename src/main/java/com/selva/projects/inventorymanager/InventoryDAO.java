@@ -1,6 +1,7 @@
 package com.selva.projects.inventorymanager;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -35,5 +36,20 @@ public class InventoryDAO {
 		items.add(item);
 		
 		return item;
+	}
+	
+	public void removeItem(int itemid) {
+		boolean itemfound = false;
+		Iterator<Item> iterator = items.iterator();
+		while(iterator.hasNext()) {
+			Item item = iterator.next();
+			if (item.getId() == itemid) {
+				iterator.remove();
+				itemfound =true;
+			}
+		}
+		
+		if(!itemfound)
+			throw new ItemNotFoundException("Item with id "+itemid+" not found");
 	}
 }

@@ -1,8 +1,14 @@
 package com.selva.projects.inventorymanager;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
 public class Item {
 
+	@Min(value=0 , message="itemid should be > 0")
 	private int id;
+	
+	@Size(min=3 , message ="name should atleast be 3 chars")
 	private String name;
 	private String type;
 	

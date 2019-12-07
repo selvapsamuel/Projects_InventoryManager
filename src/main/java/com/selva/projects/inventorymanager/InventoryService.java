@@ -29,4 +29,7 @@ public class InventoryService {
 		return inventoryDao.addItem(item);
 	}
 
+	public void removeItem(int itemid) {
+		 inventoryDao.removeItem(itemid);
+	}
 }
