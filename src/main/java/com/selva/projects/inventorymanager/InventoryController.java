@@ -38,7 +38,7 @@ public class InventoryController {
 		return inventoryService.findAll();
 	}
 
-	@GetMapping(value="/items/{itemid}",produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="/items/{itemid}")
 	public Resource<Item> findItem(@PathVariable int itemid) {
 		Item item = inventoryService.findOne(itemid);
 		

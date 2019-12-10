@@ -1,13 +1,17 @@
 package com.selva.projects.InventoryManager;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class InventoryManagerApplicationTests {
+public class InventoryManagerApplicationTests {
 
+	public InventoryManagerApplicationTests () {
+		
+	}
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }
