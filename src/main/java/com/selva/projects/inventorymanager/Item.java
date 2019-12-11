@@ -1,16 +1,26 @@
 package com.selva.projects.inventorymanager;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
+@Entity
 public class Item {
 
 	@Min(value=0 , message="itemid should be > 0")
+	@Id
+	@GeneratedValue
 	private int id;
 	
 	@Size(min=3 , message ="name should atleast be 3 chars")
 	private String name;
 	private String type;
+	
+	public Item() {
+		super();
+	}
 	
 	public Item(int id, String name, String type) {
 		super();
