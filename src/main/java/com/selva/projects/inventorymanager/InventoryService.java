@@ -29,10 +29,10 @@ public class InventoryService {
 	}
 
 	public Item addItem(Item item) {
-		return inventoryDao.addItem(item);
+		return itemRepository.save(item);
 	}
 
 	public void removeItem(int itemid) {
-		 inventoryDao.removeItem(itemid);
+		itemRepository.deleteById(itemid);
 	}
 }
