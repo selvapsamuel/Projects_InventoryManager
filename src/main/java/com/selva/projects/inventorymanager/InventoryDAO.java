@@ -21,7 +21,7 @@ public class InventoryDAO {
 	public Item findOne(int itemid) {
 
 		for (Item item : items) {
-			if (item.getId() == itemid)
+			if (item.getItemId() == itemid)
 				return item;
 		}
 		return null;
@@ -32,8 +32,8 @@ public class InventoryDAO {
 	}
 
 	public Item addItem(Item item) {
-		if(item.getId()==0)
-			item.setId(items.size()+1);
+		if(item.getItemId()==0)
+			item.setItemId(items.size()+1);
 		items.add(item);
 		
 		return item;
@@ -44,7 +44,7 @@ public class InventoryDAO {
 		Iterator<Item> iterator = items.iterator();
 		while(iterator.hasNext()) {
 			Item item = iterator.next();
-			if (item.getId() == itemid) {
+			if (item.getItemId() == itemid) {
 				iterator.remove();
 				itemfound =true;
 			}

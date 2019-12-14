@@ -53,7 +53,7 @@ public class InventoryController {
 		Item savedItem = inventoryService.addItem(item);
 
 		URI loc = ServletUriComponentsBuilder.fromCurrentRequest().
-				path("/{id}").buildAndExpand(savedItem.getId())
+				path("/{id}").buildAndExpand(savedItem.getItemId())
 				.toUri();
 		return ResponseEntity.created(loc).build();
 	}
